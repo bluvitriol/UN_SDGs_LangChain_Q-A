@@ -1,0 +1,30 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment files
+.env
+*.env
+
+# Virtual environments
+venv/
+sdgEnv/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+*.log
+
+# Token safety
+*.json
+*.pem
+
+# junk files
+main.ipynb

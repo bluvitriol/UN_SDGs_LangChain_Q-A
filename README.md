@@ -5,7 +5,7 @@ The demo loads **UN Sustainable Development Goals (SDGs)** text and enables natu
 
 
 ---
-## ✨ Features
+## Features
 - **Vector Database (ChromaDB):** Stores SDG documents for retrieval.  
 - **Embeddings:** Uses `sentence-transformers/all-MiniLM-L6-v2` for semantic search.  
 - **LLM Fallback Logic:**
@@ -17,7 +17,7 @@ The demo loads **UN Sustainable Development Goals (SDGs)** text and enables natu
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 **LangChain UN SDGs Q&A/**
 
@@ -34,7 +34,7 @@ The demo loads **UN Sustainable Development Goals (SDGs)** text and enables natu
 
 ---
 
-## ⚡ Getting Started
+## Getting Started
 
 ### 1. Install dependencies
 ```bash
@@ -69,7 +69,7 @@ Q: How does SDG address gender equality?
 A: Goal 5: Achieve gender equality and empower all women and girls.
 ```
 ---
-## 🔑 Why This Matters
+## Why This Matters
 
 This project showcases:
 
@@ -79,14 +79,14 @@ This project showcases:
 - **Practical application of LLMs** to global challenges like inequality, gender equality, and climate change.
 
 ---
-## 📚 References
+## References
 
-- LangChain Docs
-- Hugging Face Models
-- UN Sustainable Development Goals
+- [LangChain Docs](https://python.langchain.com/docs/introduction/)
+- [Hugging Face Models](https://huggingface.co/models)
+- [UN Sustainable Development Goals](https://sdgs.un.org/goals)
 
 ---
-## ✅ Next Steps
+## Next Steps
 
 - Extend dataset to full SDG text corpus.
 - Add evaluation scripts for bias and robustness.

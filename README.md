@@ -1,8 +1,8 @@
-# 🌍 UNDP Generative AI Demo: LangChain + Retrieval Q&A
+# 🌍 UNDP Generative AI Demo: LangChain + Retrieval Q&A (Web App)
 
-This project demonstrates a **Retrieval-Augmented Generation (RAG)** pipeline using **LangChain, ChromaDB, and Hugging Face embeddings**, with a smart **fallback between OpenAI and Hugging Face models**.  
+This project demonstrates a **Retrieval-Augmented Generation (RAG)** pipeline using **LangChain, ChromaDB, and Hugging Face embeddings**, with a smart **fallback between OpenAI and Hugging Face models**, now available as a **Streamlit web app**.  
+
 The demo loads **UN Sustainable Development Goals (SDGs)** text and enables natural-language Q&A aligned with the UNDP’s mission (reducing poverty, inequality, promoting sustainability).
-
 
 ---
 ## ✨ Features
@@ -13,32 +13,31 @@ The demo loads **UN Sustainable Development Goals (SDGs)** text and enables natu
   - Falls back to **Hugging Face Flan-T5** (free Inference API) if OpenAI is unavailable.  
 - **Prompt Engineering:** Custom prompt template:  
   > *“You are a UNDP research assistant. Context: {context} … Answer:”*  
-- **Retrieval Q&A:** Ask questions like *“Which SDG talks about reducing inequality?”* and get accurate answers.  
+- **Retrieval Q&A Web App:** Ask questions like *“Which SDG talks about reducing inequality?”* and get answers instantly via a clean UI.  
 
 ---
 
 ## 📂 Project Structure
 
-**LangChain UN SDGs Q&A/**
-
-``` bash
-│── sdg_goals.txt # Dataset (subset of UN SDGs) 
-│── rag_fallback.py # Main script (OpenAI → HF fallback)
-│── UNDP_GenerativeAI_QA_Brief.pdf # Analytical brief (results & implications)
-│── README.md # Documentation
-│── requirements.txt # Dependencies
-│── .gitignore # Ignore sensitive/junk files
-│── .env # API keys (not pushed to GitHub)
+```bash
+LangChain-UN-SDGs-QA/
+│── sdg_goals.txt                # Dataset (subset of UN SDGs) 
+│── app.py                       # Streamlit web app (OpenAI → HF fallback)
+│── README.md                    # Documentation
+│── requirements.txt              # Dependencies
+│── .gitignore                    # Ignore sensitive/junk files
+│── .env                          # API keys (not pushed to GitHub)
+│── chroma_store/                 # Vector DB persistence (auto-created)
 ```
-
-
 ---
 
-## ⚡ Getting Started
+## Getting Started
 
-### 1. Install dependencies
+### 1. Clone and install dependencies
 ```bash
-pip install -qU "langchain[openai]" langchain-community chromadb python-dotenv
+git clone https://github.com/bluvitriol/LangChain-UN-SDGs-QA.git
+cd LangChain-UN-SDGs-QA
+pip install -r requirements.txt
 ```
 
 
@@ -49,12 +48,28 @@ Create a .env file in the project root:
 OPENAI_API_KEY=sk-xxxxxx        # optional, if you still have credits
 HUGGINGFACEHUB_API_TOKEN=hf_xxx # free token from Hugging Face
 ```
-### 3. Run the demo
+### 3. Run the app
 ```bash
-python rag_fallback.py
+streamlit run app.py
 ```
+---
+## Deployment
 
-### 4. Example Output
+You can deploy this app for free on:
+
+- Streamlit Cloud
+
+- Hugging Face Spaces
+
+- Render
+
+Just make sure to:
+
+- Push ```.gitignore```, ```requirements.txt```, and ```app.py``` to GitHub.
+
+- Add your secrets (```.env```) in the deployment platform’s **Environment Variables** section. 
+
+<!-- ### 4. Example Output
 ```bash
 OpenAI unavailable or credits exhausted. Falling back to Hugging Face...
 Using Hugging Face Flan-T5
@@ -67,9 +82,9 @@ A: Goal 13: Take urgent action to combat climate change and its impacts.
 
 Q: How does SDG address gender equality?
 A: Goal 5: Achieve gender equality and empower all women and girls.
-```
+``` -->
 ---
-## 🔑 Why This Matters
+## Why This Matters
 
 This project showcases:
 
@@ -79,15 +94,16 @@ This project showcases:
 - **Practical application of LLMs** to global challenges like inequality, gender equality, and climate change.
 
 ---
-## 📚 References
+## References
 
-- LangChain Docs
-- Hugging Face Models
-- UN Sustainable Development Goals
+- [LangChain Docs](https://python.langchain.com/docs/introduction/)
+- [Hugging Face Models](https://huggingface.co/models)
+- [UN Sustainable Development Goals](https://sdgs.un.org/goals)
 
 ---
-## ✅ Next Steps
+## Optional Next Steps
 
 - Extend dataset to full SDG text corpus.
 - Add evaluation scripts for bias and robustness.
 - Explore workflow integration with Microsoft Power Automate.
+- Deploy as a public demo with authentication for secure access.

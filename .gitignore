@@ -15,9 +15,19 @@ sdgEnv/
 # Jupyter checkpoints
 .ipynb_checkpoints/
 
+# Chroma persistence
+chroma_store/
+*.db
+
+# Streamlit cache
+.streamlit/
+
+
 # OS junk
 .DS_Store
 Thumbs.db
+.vscode/
+.idea/
 
 # Build artifacts
 *.log

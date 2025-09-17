@@ -15,6 +15,8 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.chains import RetrievalQA
 from langchain.prompts import PromptTemplate
 
+st.set_page_config(page_title="UN SDG Q&A Assistant", page_icon="🌍")
+
 #loading environment variables (API keys)
 load_dotenv()
 openai_key = os.getenv("OPENAI_API_KEY")
@@ -88,7 +90,7 @@ def init_qa():
 qa = init_qa()
 
 #Streamlit UI
-st.set_page_config(page_title="UN SDG Q&A Assistant", page_icon="🌍")
+
 st.title("🌍 UN SDG Q&A Assistant")
 st.write("Ask me questions about the **Sustainable Development Goals (SDGs)**. "
          "I’ll retrieve context from UN documents and provide clear answers.")

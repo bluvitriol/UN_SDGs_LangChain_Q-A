@@ -76,7 +76,8 @@ def init_qa():
         llm = HuggingFaceHub(
             repo_id="google/flan-t5-small",
             model_kwargs={"temperature": 0.1, "max_length": 256},
-            huggingfacehub_api_token=hf_token
+            huggingfacehub_api_token=hf_token,
+            task="text2text-generation"
         )
         qa = RetrievalQA.from_chain_type(
             llm=llm,

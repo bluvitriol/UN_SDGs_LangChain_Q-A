@@ -1,6 +1,14 @@
 import os
 from dotenv import load_dotenv
 import streamlit as st
+import sys
+
+try:
+    __import__("pysqlite3")
+    sys.modules["sqlite3"]=sys.modules.pop("pysqlite3")
+except ImportError:
+    pass
+
 from langchain_community.document_loaders import TextLoader
 from langchain_community.vectorstores import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings

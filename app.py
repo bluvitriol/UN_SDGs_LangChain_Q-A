@@ -74,7 +74,7 @@ def init_qa():
     except Exception:
         from langchain_community.llms import HuggingFaceHub
         llm = HuggingFaceHub(
-            repo_id="google/flan-t5-small",
+            repo_id="google/flan-t5-large",
             model_kwargs={"temperature": 0.1, "max_length": 256},
             huggingfacehub_api_token=hf_token,
             task="text2text-generation"

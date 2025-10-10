@@ -5,6 +5,10 @@ This project demonstrates a **Retrieval-Augmented Generation (RAG)** pipeline us
 The demo loads **UN Sustainable Development Goals (SDGs)** text and enables natural-language Q&A aligned with the UNDP’s mission (reducing poverty, inequality, promoting sustainability).
 
 ---
+ ## Demo Video
+https://github.com/user-attachments/assets/04fbfbf3-b69e-4975-8ac0-62439987ce2d
+
+---
 ## Features
 - **Vector Database (ChromaDB):** Stores SDG documents for retrieval.  
 - **Embeddings:** Uses `sentence-transformers/all-MiniLM-L6-v2` for semantic search.  
